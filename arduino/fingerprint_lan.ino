@@ -57,6 +57,7 @@ void setup() {
     while (1);
   }
  }else{
+  //Mengecek apakah sensor terhubung ke server
   serverdisable();
   }
   tempel();
@@ -74,6 +75,7 @@ int getFingerprintIDez() {
   p = finger.image2Tz();
   if (p != FINGERPRINT_OK) return -1;
   p = finger.fingerFastSearch();
+  //Mengecek apakah sensor terhubung ke server
   if (!client.connect(server, 80)) {
     serverdisable();
     }
@@ -164,10 +166,12 @@ void tempel() {
   lcd.print("Jari Anda");
   Serial.println("Tempelkan Sidik Jari Anda");
   }else{
+  //Mengecek apakah sensor terhubung ke server
   serverdisable();
     }
 }
 
+//Mengecek apakah sensor terhubung ke server
 void serverdisable(){
   lcd.clear();
   lcd.setCursor(5, 0);
