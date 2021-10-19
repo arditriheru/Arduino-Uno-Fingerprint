@@ -1,2 +1,0 @@
-# fingerprint
-Sistem Keamanan Pintu
